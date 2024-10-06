@@ -19,9 +19,8 @@ function moveScroll() {
     const smallHeader = document.getElementById('small-header'); // Mover esta línea aquí
 
     if (window.scrollY > 0) {
-        smallHeader.classList.add('hidden');
-        console.log('moviendo');
+        smallHeader.classList.remove('lg:flex');
     } else {
-        smallHeader.classList.remove('hidden');
+        smallHeader.classList.add('lg:flex');
     }
 }

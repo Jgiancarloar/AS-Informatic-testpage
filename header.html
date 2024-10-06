@@ -1,9 +1,9 @@
 <header class="max-w-7xl mx-auto">
 
     <!--Small header-->
-    <div id="small-header" class="h-12 flex items-center justify-between">
-        <div class="flex items-center">
-            <img src="./assets/icons/gps.svg" alt="gps icon">
+    <div id="small-header" class="hidden h-12 lg:flex items-center justify-between sm:px-14">
+        <div class="flex gap-2 items-center">
+            <img src="./assets/icons/gps.svg" alt="gps icon" class="h-full">
             <p>Calle Virtud y Unión 207 - San Isidro</p>
         </div>
         <div class="flex gap-7">    
@@ -19,10 +19,10 @@
     </div>
 
     <!--NavBar-->
-    <nav class="bg-white text-[#213368] font-medium rounded-[9px] h-28 flex items-center justify-between px-7">
-        <div class="flex items-center space-x-24">
-            <div>
-               <img src="./assets/images/logo1.svg" alt="image logo">
+    <nav class="bg-white text-[#213368] font-medium rounded-[9px] h-20 lg:h-28 flex items-center justify-between px-7">
+        <div class="flex items-center space-x-24 h-full">
+            <div class="h-full p-2">
+                <img src="./assets/images/logo1.svg" alt="image logo" class="object-contain w-auto h-full">
             </div>
             <ul class="hidden lg:flex space-x-10">
                 <li>
@@ -44,5 +44,6 @@
         </div>
         <a href="#" class="bg-[#EF4043] h-[52px] w-[140px] rounded-md flex items-center justify-center text-white text-[13px] font-bold">CONTÁCTANOS</a>
     </nav>
+    
 
 </header>
