@@ -1,0 +1,15 @@
+{
+  "name": "as-informatic",
+  "version": "1.0.0",
+  "description": "A simple HTML/JS/CSS starter template",
+  "main": "main.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./styles.css -o ./dist/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}
