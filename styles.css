@@ -6,6 +6,10 @@
   font-family: "Poppins", system-ui;
 }
 
+.pontano-sans {
+  font-family: "Pontano Sans", sans-serif;
+}
+
 .dots {
   display: flex;
 }

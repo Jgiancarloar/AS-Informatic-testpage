@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error cargando el header:', error));
 
-
-
-
     // Slider de soluciones tecnológicas
     const slides = document.querySelectorAll('.slide');
     const dotsContainer = document.querySelector('.dots');
