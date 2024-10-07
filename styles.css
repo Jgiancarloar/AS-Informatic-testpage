@@ -3,5 +3,32 @@
 @tailwind utilities;
 
 .poppins {
-    font-family: "Poppins", system-ui;
-  }
+  font-family: "Poppins", system-ui;
+}
+
+.dots {
+  display: flex;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #d1d5db;
+  /* Color de los puntos inactivos */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #BE3258;
+  /* Color del punto activo */
+}
+
+.slide {
+  display: none; /* Oculta todos los slides por defecto */
+}
+
+.slide.active {
+  display: flex; /* Solo el slide activo se muestra */
+}

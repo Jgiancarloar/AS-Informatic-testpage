@@ -50,8 +50,8 @@
     </section>
 
     <!--About us-->
-    <section class="bg-whhite text-[#213368]">
-      <div class="max-w-7xl mx-auto pt-24 pb-48 px-3 sm:px-14 xl:px-0 flex flex-col space-y-24">
+    <section class="bg-white text-[#213368]">
+      <div class="max-w-7xl mx-auto pt-24 pb-24 px-3 sm:px-14 xl:px-0 flex flex-col space-y-24">
         <!--Statistics-->
         <div class="grid grid-cols-2 lg:grid-cols-3 gap-y-10">
           <div class="flex flex-col sm:flex-row gap-5 justify-start items-center w-full">
@@ -87,7 +87,7 @@
         </div>
 
         <!--History-->
-        <div class="flex flex-col lg:flex-row gap-20">
+        <div class="flex flex-col lg:flex-row gap-10">
           <div class="flex items-center justify-center w-full">
             <img src="./assets/images/img-about-us.svg" alt="image history" class="w-full">
           </div>
@@ -112,87 +112,99 @@
     </section>
 
     <!--Tech solutions-->
-    <section class="bg-[#F5F6F7]  text-[#213368]">
-      <div class="py-14 pb-44 px-3 flex flex-col items-center space-y-20">
+    <section class="bg-[#F5F6F7] text-[#213368]">
+      <div class="py-14 pb-28 px-3 flex flex-col items-center space-y-20">
         <h2 class="text-5xl font-semibold text-center">Soluciones tecnológicas</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-5">
-          <div
-            class="bg-white shadow-md h-[355px] max-w-[400px] rounded-[18px] p-7 flex flex-col gap-5 justify-between">
-            <div class="bg-[#E1F3FD] rounded-[9px] h-[70px] w-[70px] flex items-center justify-center">
-              <img src="./assets/icons/solution1.svg" alt="image solution">
+        <div class="overflow-hidden">
+          <div class="slider flex gap-5 transition-transform duration-300">
+            <div
+              class="slide active bg-white shadow-md h-[355px] max-w-[400px] rounded-[18px] p-7 flex flex-col gap-5 justify-between">
+              <div class="bg-[#E1F3FD] rounded-[9px] h-[70px] w-[70px] flex items-center justify-center">
+                <img src="./assets/icons/solution1.svg" alt="image solution">
+              </div>
+              <div class="flex-grow flex flex-col gap-2">
+                <h3 class="text-2xl font-semibold">Proveedor Perú Compras</h3>
+                <p class="text-[#7F7F7F] text-base font-medium">Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.</p>
+              </div>
+              <div class="flex h-1/6">
+                <a href="#" class="text-[#BE3258] text-sm font-medium"> Más información</a>
+              </div>
             </div>
-            <div class="flex-grow flex flex-col gap-2"> <!-- Cambié h-full a flex-grow -->
-              <h3 class="text-2xl font-semibold">Proveedor Perú Compras</h3>
-              <p class="text-[#7F7F7F] text-base font-medium">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </p>
+            <div
+              class="slide bg-white shadow-md h-[355px] max-w-[400px] rounded-[18px] p-7 flex flex-col gap-5 justify-between">
+              <div class="bg-[#E1F3FD] rounded-[9px] h-[70px] w-[70px] flex items-center justify-center">
+                <img src="./assets/icons/solution2.svg" alt="image solution">
+              </div>
+              <div class="flex-grow flex flex-col gap-2">
+                <h3 class="text-2xl font-semibold">Proveedor Perú Compras</h3>
+                <p class="text-[#7F7F7F] text-base font-medium">Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.</p>
+              </div>
+              <div class="flex h-1/6">
+                <a href="#" class="text-[#BE3258] text-sm font-medium"> Más información</a>
+              </div>
             </div>
-            <div class="flex h-1/6">
-              <a href="#" class="text-[#BE3258] text-sm font-medium"> Más información</a>
+            <div
+              class="slide bg-white shadow-md h-[355px] max-w-[400px] rounded-[18px] p-7 flex flex-col gap-5 justify-between">
+              <div class="bg-[#E1F3FD] rounded-[9px] h-[70px] w-[70px] flex items-center justify-center">
+                <img src="./assets/icons/solution3.svg" alt="">
+              </div>
+              <div class="flex-grow flex flex-col gap-2">
+                <h3 class="text-2xl font-semibold">Proveedor Perú Compras</h3>
+                <p class="text-[#7F7F7F] text-base font-medium">Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.</p>
+              </div>
+              <div class="flex h-1/6">
+                <a href="#" class="text-[#BE3258] text-sm font-medium"> Más información</a>
+              </div>
             </div>
-          </div>
-          <div
-            class="bg-white shadow-md h-[355px] max-w-[400px] rounded-[18px] p-7 flex flex-col gap-5 justify-between">
-            <div class="bg-[#E1F3FD] rounded-[9px] h-[70px] w-[70px] flex items-center justify-center">
-              <img src="./assets/icons/solution2.svg" alt="image solution">
-            </div>
-            <div class="flex-grow flex flex-col gap-2"> <!-- Cambié h-full a flex-grow -->
-              <h3 class="text-2xl font-semibold">Proveedor Perú Compras</h3>
-              <p class="text-[#7F7F7F] text-base font-medium">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </p>
-            </div>
-            <div class="flex h-1/6">
-              <a href="#" class="text-[#BE3258] text-sm font-medium"> Más información</a>
-            </div>
-          </div>
-          <div
-            class="bg-white shadow-md h-[355px] max-w-[400px] rounded-[18px] p-7 flex flex-col gap-5 justify-between">
-            <div class="bg-[#E1F3FD] rounded-[9px] h-[70px] w-[70px] flex items-center justify-center">
-              <img src="./assets/icons/solution3.svg" alt="">
-            </div>
-            <div class="flex-grow flex flex-col gap-2"> <!-- Cambié h-full a flex-grow -->
-              <h3 class="text-2xl font-semibold">Proveedor Perú Compras</h3>
-              <p class="text-[#7F7F7F] text-base font-medium">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </p>
-            </div>
-            <div class="flex h-1/6">
-              <a href="#" class="text-[#BE3258] text-sm font-medium"> Más información</a>
-            </div>
-          </div>
-          <div
-            class="bg-white shadow-md h-[355px] max-w-[400px] rounded-[18px] p-7 flex flex-col gap-5 justify-between">
-            <div class="bg-[#E1F3FD] rounded-[9px] h-[70px] w-[70px] flex items-center justify-center">
-              <img src="./assets/icons/solution4.svg" alt="">
-            </div>
-            <div class="flex-grow flex flex-col gap-2"> <!-- Cambié h-full a flex-grow -->
-              <h3 class="text-2xl font-semibold">Proveedor Perú Compras</h3>
-              <p class="text-[#7F7F7F] text-base font-medium">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </p>
-            </div>
-            <div class="flex h-1/6">
-              <a href="#" class="text-[#BE3258] text-sm font-medium"> Más información</a>
+            <div
+              class="slide bg-white shadow-md h-[355px] max-w-[400px] rounded-[18px] p-7 flex flex-col gap-5 justify-between">
+              <div class="bg-[#E1F3FD] rounded-[9px] h-[70px] w-[70px] flex items-center justify-center">
+                <img src="./assets/icons/solution4.svg" alt="">
+              </div>
+              <div class="flex-grow flex flex-col gap-2">
+                <h3 class="text-2xl font-semibold">Proveedor Perú Compras</h3>
+                <p class="text-[#7F7F7F] text-base font-medium">Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.</p>
+              </div>
+              <div class="flex h-1/6">
+                <a href="#" class="text-[#BE3258] text-sm font-medium"> Más información</a>
+              </div>
             </div>
           </div>
+          <div class="dots flex justify-center space-x-2 mt-4"></div>
+          <!-- Los botones prev y next están eliminados ya que solo usarás dots -->
         </div>
       </div>
     </section>
 
+
     <!--Our Customers-->
     <section class="bg-white text-[#213368]">
       <div class="max-w-7xl mx-auto pt-20 pb-40 flex flex-col gap-5 px-3">
-        <!-- Asegúrate de que el contenedor padre tenga h-full -->
         <h2 class="text-5xl font-semibold text-center">Nuestros clientes</h2>
-        <div class="h-48 flex items-center">
-          <div class="bg-[#F4F4F4] h-[60px] w-9 flex justify-center items-center">
+        <div class="bg-white h-48 flex gap-5 items-center overflow-hidden"> <!-- Agregamos overflow-hidden -->
+          <div class="bg-[#F4F4F4] h-[60px] w-9 flex justify-center items-center cursor-pointer" id="arrow-left">
             <img src="./assets/icons/arrowleft.svg" alt="arrowleft">
           </div>
-          <div class="flex-1 h-full">
-
+          <div class="flex-1 flex items-center h-full overflow-hidden relative">
+            <div id="slider" class="flex items-center gap-5 transition-transform duration-500 ease-in-out">
+              <!-- Agregar clase flex y transition -->
+              <img src="./assets/images/client1.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client2.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client3.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client4.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client5.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client1.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client2.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client3.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client4.svg" alt="customer image" class="h-full">
+              <img src="./assets/images/client5.svg" alt="customer image" class="h-full">
+            </div>
           </div>
-          <div class="bg-[#F4F4F4] h-[60px] w-9 flex justify-center items-center">
+          <div class="bg-[#F4F4F4] h-[60px] w-9 flex justify-center items-center cursor-pointer" id="arrow-right">
             <img src="./assets/icons/arrowright.svg" alt="arrowright">
           </div>
         </div>

@@ -1,12 +1,12 @@
-<header class="max-w-7xl mx-auto">
+<header>
 
     <!--Small header-->
-    <div id="small-header" class="hidden h-12 lg:flex items-center justify-between sm:px-14">
+    <div id="small-header" class="hidden h-12 max-w-7xl mx-auto lg:flex items-center justify-between sm:px-14 xl:px-0">
         <div class="flex gap-2 items-center">
             <img src="./assets/icons/gps.svg" alt="gps icon" class="h-full">
             <p>Calle Virtud y Unión 207 - San Isidro</p>
         </div>
-        <div class="flex gap-7">    
+        <div class="flex gap-7">
             <div class="flex gap-2">
                 <img src="./assets/icons/phone.svg" alt="image phone">
                 <p>+51-549-3605</p>
@@ -19,31 +19,39 @@
     </div>
 
     <!--NavBar-->
-    <nav class="bg-white text-[#213368] font-medium rounded-[9px] h-20 lg:h-28 flex items-center justify-between px-7">
-        <div class="flex items-center space-x-24 h-full">
-            <div class="h-full p-2">
-                <img src="./assets/images/logo1.svg" alt="image logo" class="object-contain w-auto h-full">
+    <div id="navbar"  class="relative mt-5 mx-3 lg:mt-0 lg:mx-0">
+        <nav id="navbar-bg" class="bg-white opacity-0 transition-all duration-500 h-14 sm:h-28">
+        </nav>
+        <nav
+            class="absolute top-0 left-0 right-0  max-w-7xl mx-auto  bg-white text-[#213368] font-medium rounded-[9px] h-14 sm:h-28 flex items-center justify-between px-7">
+            <div class="flex items-center space-x-24 h-full">
+                <div class="h-full p-2">
+                    <img src="./assets/images/logo1.svg" alt="image logo" class="object-contain w-auto h-full">
+                </div>
+                <ul class="hidden lg:flex space-x-10">
+                    <li>
+                        <a href="#">Partners</a>
+                    </li>
+                    <li>
+                        <a href="#">Soluciones</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">¿Quiénes somos?</a>
+                    </li>
+                    <li>
+                        <a href="#" class="bg-[#E1F3FD] rounded-md py-1 px-3">Tienda</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="hidden lg:flex space-x-10">
-                <li>
-                    <a href="#">Partners</a>
-                </li>
-                <li>
-                    <a href="#">Soluciones</a>
-                </li>
-                <li>
-                    <a href="#">Blog</a>
-                </li>
-                <li>
-                    <a href="#">¿Quiénes somos?</a>
-                </li>
-                <li>
-                    <a href="#" class="bg-[#E1F3FD] rounded-md py-1 px-3">Tienda</a>
-                </li>
-            </ul>
-        </div>
-        <a href="#" class="bg-[#EF4043] h-[52px] w-[140px] rounded-md flex items-center justify-center text-white text-[13px] font-bold">CONTÁCTANOS</a>
-    </nav>
-    
+            <div class="flex items-center space-x-10">
+                <a id="boton" href="#"
+                    class="bg-[#EF4043] h-[52px] w-[140px] rounded-md hidden sm:flex items-center justify-center text-white text-[13px] font-bold">CONTÁCTANOS</a>
+                <img src="./assets/icons/menu.svg" alt="menu icon" class="w-10 h-10 md:hidden">
+            </div>
+        </nav>
+    </div>
 
 </header>
