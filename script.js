@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error en updateDots:', error.message);
         }
     }
-    
+
 
     // Navegación mediante dots
     const totalSlides = slides.length;
@@ -100,14 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función para obtener los elementos del header
     function getHeaderElements() {
         const smallHeader = document.getElementById('small-header');
-        const navbarBg = document.getElementById('navbar-bg');
         const navbar = document.getElementById('navbar');
         const menu = document.getElementById('menu')
         const openMenu = document.getElementById('open-menu')
         const closeMenu = document.getElementById('close-menu')
 
-        if (smallHeader && navbarBg && navbar && menu && openMenu && closeMenu) {
-            return { smallHeader, navbarBg, navbar, menu, openMenu, closeMenu };
+        if (smallHeader && navbar && menu && openMenu && closeMenu) {
+            return { smallHeader, navbar, menu, openMenu, closeMenu };
         } else {
             console.error('Algunos elementos del header no se encontraron.');
             return null;
@@ -115,11 +114,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Función para manejar el scroll
-    function moveScroll({ smallHeader, navbarBg, navbar }) {
+    function moveScroll({ smallHeader, navbar }) {
         const isScrolled = window.scrollY > 0;
 
         smallHeader.classList.toggle('lg:flex', !isScrolled);
-        navbarBg.classList.toggle('opacity-100', isScrolled);
 
         if (isScrolled) {
             navbar.classList.remove('mt-5', 'mx-3');
@@ -177,16 +175,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const sliderLogo = document.getElementById('sliderLogo'); // El contenedor que contiene las imágenes
             const arrowLeft = document.getElementById('arrow-left'); // Botón de la flecha izquierda
             const arrowRight = document.getElementById('arrow-right'); // Botón de la flecha derecha
-    
+
             // Verificar si los elementos existen
             if (!sliderLogo || !arrowLeft || !arrowRight) {
                 throw new Error('Elementos del slider no encontrados. Asegúrate de que el HTML tenga los IDs correctos.');
             }
-    
+
             let scrollAmount = 0; // Mantener un seguimiento de la cantidad de desplazamiento
             const scrollStep = 200; // Cantidad de desplazamiento en píxeles por clic (ajustable)
             const imageCount = sliderLogo.children.length / 2; // Contar las imágenes (la mitad para el efecto infinito)
-    
+
             // Click en la flecha izquierda
             arrowLeft.addEventListener('click', function () {
                 if (scrollAmount > 0) {
@@ -197,18 +195,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     scrollAmount = (imageCount - 1) * scrollStep; // Volver al último conjunto de imágenes
                     sliderLogo.style.transition = 'none'; // Sin transición
                     sliderLogo.style.transform = `translateX(-${scrollAmount}px)`;
-    
+
                     // Forzar reflujo para reiniciar la transición
                     void sliderLogo.offsetWidth;
                     sliderLogo.style.transition = 'transform 0.5s ease-in-out'; // Volver a habilitar la transición
-    
+
                     setTimeout(() => {
                         scrollAmount -= scrollStep; // Desplazarse una vez más
                         sliderLogo.style.transform = `translateX(-${scrollAmount}px)`;
                     }, 50);
                 }
             });
-    
+
             // Click en la flecha derecha
             arrowRight.addEventListener('click', function () {
                 const maxScroll = (imageCount - 1) * scrollStep; // Máximo scroll permitido
@@ -220,11 +218,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     scrollAmount = 0; // Reiniciar el desplazamiento
                     sliderLogo.style.transition = 'none'; // Sin transición
                     sliderLogo.style.transform = `translateX(0)`; // Volver al inicio
-    
+
                     // Forzar reflujo para reiniciar la transición
                     void sliderLogo.offsetWidth;
                     sliderLogo.style.transition = 'transform 0.5s ease-in-out'; // Volver a habilitar la transición
-    
+
                     setTimeout(() => {
                         scrollAmount += scrollStep; // Desplazarse una vez más
                         sliderLogo.style.transform = `translateX(-${scrollAmount}px)`;
@@ -235,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error en initSlider:', error.message);
         }
     }
-    
+
     // Función para manejar la aparición de elementos al hacer scroll
     function initScrollAnimations() {
         const elementsToShow = document.querySelectorAll('.scroll-reveal'); // Selector para los elementos que aparecerán

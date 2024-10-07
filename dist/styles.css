@@ -590,6 +590,10 @@ video {
   z-index: 50;
 }
 
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -712,6 +716,10 @@ video {
   height: 100vh;
 }
 
+.h-2 {
+  height: 0.5rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -771,6 +779,42 @@ video {
 
 .max-w-md {
   max-width: 28rem;
+}
+
+.max-w-10 {
+  max-width: 2.5rem;
+}
+
+.max-w-40 {
+  max-width: 10rem;
+}
+
+.max-w-80 {
+  max-width: 20rem;
+}
+
+.max-w-64 {
+  max-width: 16rem;
+}
+
+.max-w-5 {
+  max-width: 1.25rem;
+}
+
+.max-w-52 {
+  max-width: 13rem;
+}
+
+.max-w-4 {
+  max-width: 1rem;
+}
+
+.max-w-44 {
+  max-width: 11rem;
+}
+
+.max-w-48 {
+  max-width: 12rem;
 }
 
 .flex-1 {
@@ -865,6 +909,16 @@ video {
 
 .gap-y-10 {
   row-gap: 2.5rem;
+}
+
+.gap-x-5 {
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
+
+.gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
 }
 
 .space-x-10 > :not([hidden]) ~ :not([hidden]) {
@@ -986,6 +1040,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20 {
@@ -1315,6 +1374,14 @@ video {
     height: 7rem;
   }
 
+  .sm\:max-w-80 {
+    max-width: 20rem;
+  }
+
+  .sm\:max-w-64 {
+    max-width: 16rem;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -1330,6 +1397,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
@@ -1377,6 +1448,14 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
@@ -1420,6 +1499,11 @@ video {
   .xl\:mx-auto {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .xl\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .xl\:px-0 {
