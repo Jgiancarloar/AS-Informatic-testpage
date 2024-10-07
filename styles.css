@@ -36,3 +36,14 @@
 .slide.active {
   display: flex; /* Solo el slide activo se muestra */
 }
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

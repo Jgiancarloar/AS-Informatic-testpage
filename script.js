@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const openMenu = document.getElementById('open-menu')
         const closeMenu = document.getElementById('close-menu')
 
-        if (smallHeader && navbarBg && navbar && menu && openMenu, closeMenu) {
+        if (smallHeader && navbarBg && navbar && menu && openMenu && closeMenu) {
             return { smallHeader, navbarBg, navbar, menu, openMenu, closeMenu };
         } else {
             console.error('Algunos elementos del header no se encontraron.');
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Crear un Intersection Observer
+    // Crear un Intersection Observer para los contadores
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -218,4 +218,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Función para manejar la aparición de elementos al hacer scroll
+    function initScrollAnimations() {
+        const elementsToShow = document.querySelectorAll('.scroll-reveal'); // Selector para los elementos que aparecerán
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Agrega una clase para animar
+                    observer.unobserve(entry.target); // Deja de observar este elemento
+                }
+            });
+        });
+
+        elementsToShow.forEach(element => {
+            observer.observe(element); // Observa cada elemento
+        });
+    }
+
+    // Llamar a la función para inicializar las animaciones al hacer scroll
+    initScrollAnimations();
 });
