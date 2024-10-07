@@ -8,12 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const headerElements = getHeaderElements();
             if (headerElements) {
                 window.addEventListener('scroll', () => moveScroll(headerElements));
+                initMenu(headerElements);
             }
 
-            // Iniciar la lógica de los contadores después de cargar el header
-            initCounters(); 
+            // Iniciar la lógica del slider
+            initSlider();
         })
         .catch(error => console.error('Error cargando el header:', error));
+
+
+
 
     // Slider de soluciones tecnológicas
     const slides = document.querySelectorAll('.slide');
@@ -76,14 +80,29 @@ document.addEventListener('DOMContentLoaded', function () {
         showSlide(currentIndex); // Mostrar la diapositiva correcta después de ajustar
     });
 
+    function initMenu({ menu, openMenu, closeMenu }) {
+        openMenu.addEventListener('click', () => {
+            menu.classList.remove('-translate-x-full');
+            menu.classList.add('translate-x-0');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            menu.classList.remove('translate-x-0');
+            menu.classList.add('-translate-x-full');
+        });
+    }
+
     // Función para obtener los elementos del header
     function getHeaderElements() {
         const smallHeader = document.getElementById('small-header');
         const navbarBg = document.getElementById('navbar-bg');
         const navbar = document.getElementById('navbar');
+        const menu = document.getElementById('menu')
+        const openMenu = document.getElementById('open-menu')
+        const closeMenu = document.getElementById('close-menu')
 
-        if (smallHeader && navbarBg && navbar) {
-            return { smallHeader, navbarBg, navbar };
+        if (smallHeader && navbarBg && navbar && menu && openMenu, closeMenu) {
+            return { smallHeader, navbarBg, navbar, menu, openMenu, closeMenu };
         } else {
             console.error('Algunos elementos del header no se encontraron.');
             return null;
@@ -118,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (current < target) {
                     counter.innerText = Math.ceil(current + increment) + '+';
-                    
+
                     // Reducimos el tiempo entre actualizaciones
                     setTimeout(updateCounter, Math.random() * 50); // De 100ms a 50ms para más velocidad
                 } else {
@@ -128,6 +147,78 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Inicializamos el contador
             updateCounter();
+        });
+    }
+
+    // Crear un Intersection Observer
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                initCounters(); // Llamar a initCounters cuando el elemento es visible
+                observer.unobserve(entry.target); // Dejar de observar
+            }
+        });
+    });
+
+    // Observar el elemento con los contadores
+    const countersElement = document.querySelector('.counter'); // Asegúrate de que este selector sea correcto
+    if (countersElement) {
+        observer.observe(countersElement);
+    }
+
+    // Función para inicializar el slider
+    function initSlider() {
+        const sliderLogo = document.getElementById('sliderLogo'); // El contenedor que contiene las imágenes
+        const arrowLeft = document.getElementById('arrow-left'); // Botón de la flecha izquierda
+        const arrowRight = document.getElementById('arrow-right'); // Botón de la flecha derecha
+
+        let scrollAmount = 0; // Mantener un seguimiento de la cantidad de desplazamiento
+        const scrollStep = 200; // Cantidad de desplazamiento en píxeles por clic (ajustable)
+        const imageCount = sliderLogo.children.length / 2; // Contar las imágenes (la mitad para el efecto infinito)
+
+        // Click en la flecha izquierda
+        arrowLeft.addEventListener('click', function () {
+            if (scrollAmount > 0) {
+                scrollAmount -= scrollStep;
+                sliderLogo.style.transform = `translateX(-${scrollAmount}px)`;
+            } else {
+                // Si llega al inicio, mover al final para el efecto infinito
+                scrollAmount = (imageCount - 1) * scrollStep; // Volver al último conjunto de imágenes
+                sliderLogo.style.transition = 'none'; // Sin transición
+                sliderLogo.style.transform = `translateX(-${scrollAmount}px)`;
+
+                // Forzar reflujo para reiniciar la transición
+                void sliderLogo.offsetWidth;
+                sliderLogo.style.transition = 'transform 0.5s ease-in-out'; // Volver a habilitar la transición
+
+                setTimeout(() => {
+                    scrollAmount -= scrollStep; // Desplazarse una vez más
+                    sliderLogo.style.transform = `translateX(-${scrollAmount}px)`;
+                }, 50);
+            }
+        });
+
+        // Click en la flecha derecha
+        arrowRight.addEventListener('click', function () {
+            const maxScroll = (imageCount - 1) * scrollStep; // Máximo scroll permitido
+            if (scrollAmount < maxScroll) {
+                scrollAmount += scrollStep;
+                sliderLogo.style.transform = `translateX(-${scrollAmount}px)`;
+            } else {
+                // Si llega al final, mover al inicio para el efecto infinito
+                scrollAmount = 0; // Reiniciar el desplazamiento
+                sliderLogo.style.transition = 'none'; // Sin transición
+                sliderLogo.style.transform = `translateX(0)`; // Volver al inicio
+
+                // Forzar reflujo para reiniciar la transición
+                void sliderLogo.offsetWidth;
+                sliderLogo.style.transition = 'transform 0.5s ease-in-out'; // Volver a habilitar la transición
+
+                setTimeout(() => {
+                    scrollAmount += scrollStep; // Desplazarse una vez más
+                    sliderLogo.style.transform = `translateX(-${scrollAmount}px)`;
+                }, 50);
+            }
         });
     }
 });
